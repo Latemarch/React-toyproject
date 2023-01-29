@@ -3,6 +3,7 @@ import React from 'react'
 import { useParams } from 'react-router-dom'
 import VideoCard from '../components/VideoCard'
 import { search } from '../apis/youtube'
+import styles from './Videos.module.css'
 
 export default function Videos() {
   const { keyword } = useParams()
@@ -11,7 +12,7 @@ export default function Videos() {
   )
   return (
     <>
-      <div>Video {keyword ? `${keyword}` : 'hot'}</div>
+      {/* <div>Video {keyword ? `${keyword}` : 'hot'}</div> */}
       {isLoading && <p>Loading...</p>}
       {error && <p>Something is wrong</p>}
       {videos && (
