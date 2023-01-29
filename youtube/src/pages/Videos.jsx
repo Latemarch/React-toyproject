@@ -2,14 +2,16 @@ import { useQuery } from '@tanstack/react-query'
 import React from 'react'
 import { useParams } from 'react-router-dom'
 import VideoCard from '../components/VideoCard'
-import { search } from '../apis/youtube'
 import styles from './Videos.module.css'
+import { useYoutubeApi } from '../context/YoutubeApiContext'
 
 export default function Videos() {
   const { keyword } = useParams()
+  const { youtube } = useYoutubeApi()
   const { isLoading, error, data: videos } = useQuery(['videos', keyword], () =>
-    search(keyword),
+    youtube.search(keyword),
   )
+  console.log(videos)
   return (
     <>
       {/* <div>Video {keyword ? `${keyword}` : 'hot'}</div> */}

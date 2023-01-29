@@ -1,11 +1,17 @@
 import React from 'react'
 import { formatAgo } from '../util/Date'
 import styles from './VideoCard.module.css'
+import { useNavigate } from 'react-router-dom'
 
 export default function VideoCard({ video }) {
   const { publishedAt, title, thumbnails, channelTitle } = video.snippet
+  const navigate = useNavigate()
   return (
-    <li>
+    <li
+      onClick={() => {
+        navigate(`/videos/watch/${video.id}`, { state: { video } })
+      }}
+    >
       <img src={thumbnails.medium.url} alt={title} />
       <div>
         <p className={styles.title}>{title}</p>
