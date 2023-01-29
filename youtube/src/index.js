@@ -6,7 +6,7 @@ import App from './App'
 import NotFound from './pages/NotFound'
 import Videos from './pages/Videos'
 import VideoDetail from './pages/VideoDetail'
-import SearchHeader from './components/SearchHeader'
+import './index.css'
 
 const router = createBrowserRouter([
   {
@@ -24,7 +24,6 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
   <React.StrictMode>
-    <SearchHeader />
     <RouterProvider router={router} />
   </React.StrictMode>,
 )
