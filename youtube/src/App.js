@@ -12,6 +12,7 @@ function App() {
       <YoutubeApiProvider>
         <QueryClientProvider client={queryClient}>
           <Outlet />
+          {/*child component of App here, Outlet*/}
         </QueryClientProvider>
       </YoutubeApiProvider>
     </>

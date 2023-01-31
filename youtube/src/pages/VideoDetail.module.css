@@ -1,0 +1,26 @@
+@media (max-width: 1000px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 1000px) {
+  .container {
+    display: flex;
+    justify-content: center;
+  }
+}
+.container_detail {
+  display: flex;
+  flex-direction: column;
+  margin-right: 1%;
+  width: 70%;
+}
+
+.channel_info_title {
+  font-size: 1.5rem;
+}
+.container_related {
+  flex-basis: 30%;
+}
